@@ -53,6 +53,8 @@ def pBar(size,name=""):
     widgets = [ Back.CYAN+Fore.BLACK ," %s :"%name ,Percentage(), ' ', 
         Bar(marker=RotatingMarker()), ' ', ETA(), ' ', FileTransferSpeed(),Back.RESET + Style.RESET_ALL]
 
+    if size == 1 :
+        size+=1
     pbar = ProgressBar(widgets=widgets, maxval=size-1).start()
     return pbar
 
